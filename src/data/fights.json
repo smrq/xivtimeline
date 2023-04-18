@@ -1,0 +1,81 @@
+[{
+	"id": "p3s",
+	"name": "Asphodelos: The Third Circle | P3S",
+	"duration": [10, 50],
+	"timeline": [
+		{ "name": "Scorched Exaltation", "time": [0, 12] },
+		{ "name": "Heat of Condemnation", "time": [0, 22] },
+		{ "name": "Heat of Condemnation", "time": [1, 36] },
+		{ "name": "Scorched Exaltation", "time": [1, 43] },
+		{ "name": "Heat of Condemnation", "time": [2, 28] },
+		{ "name": "Flare/Sparks of Condemnation", "time": [2, 53] },
+		{ "name": "Sunbirds", "time": [3, 0] },
+		{ "name": "Flames of Undeath/Revived Sunbirds", "time": [3, 27] },
+		{ "name": "Flames of Undeath", "time": [4, 14] },
+		{ "name": "Dead Rebirth", "time": [4, 35] },
+		{ "name": "Heat of Condemnation", "time": [4, 50] },
+		{ "name": "Ashplume", "time": [5, 42] },
+		{ "name": "Scorched Exaltation", "time": [6, 31] },
+		{ "name": "Scorched Exaltation", "time": [6, 38] },
+		{ "name": "Heat of Condemnation", "time": [6, 49] },
+		{ "name": "Firestorms of Asphodelos", "time": [7, 4] },
+		{ "name": "Ashplume", "time": [7, 24] },
+		{ "name": "Storms of Asphodelos", "time": [7, 47] },
+		{ "name": "Ashplume", "time": [8, 17] },
+		{ "name": "Scorched Exaltation", "time": [8, 23] },
+		{ "name": "Life's Agonies", "time": [9, 8] },
+		{ "name": "Ashplume", "time": [9, 29] },
+		{ "name": "Flare/Sparks of Condemnation", "time": [9, 43] },
+		{ "name": "Scorched Exaltation", "time": [10, 30] },
+		{ "name": "Scorched Exaltation", "time": [10, 37] }
+	]
+}, {
+	"id": "p8s2",
+	"name": "Abyssos: The Eighth Circle | P8S Phase 2",
+	"duration": [8, 40],
+	"timeline": [
+		{ "name": "Auto", "time": [0, 5] },
+		{ "name": "Auto", "time": [0, 8] },
+		{ "name": "Auto", "time": [0, 11] },
+		{ "name": "Aioniopyr", "time": [0, 16] },
+		{ "name": "Auto", "time": [0, 19] },
+		{ "name": "Auto", "time": [0, 22] },
+		{ "name": "Tyrant's Unholy Darkness", "short": "Split TB", "time": [0, 28] },
+		{ "name": "Auto", "time": [0, 32] },
+		{ "name": "Auto", "time": [0, 35] },
+
+		{ "name": "Natural Alignment", "short": "NA", "time": [0, 40] },
+		{ "name": "Forcible Fire II/III", "short": "Stack/spread", "time": [0, 58] },
+		{ "name": "Forcible Fire III/II", "short": "Spread/stack", "time": [1, 4] },
+		{ "name": "Forcible Trifire/Difreeze", "short": "Fire/ice", "time": [1, 16] },
+		{ "name": "Forcible Difreeze/Trifire", "short": "Ice/fire", "time": [1, 22] },
+		{ "name": "Aioniopyr", "time": [1, 29] },
+		{ "name": "Auto", "time": [1, 32] },
+		{ "name": "Auto", "time": [1, 35] },
+		{ "name": "Tyrant's Unholy Darkness", "short": "Split TB", "time": [1, 43] },
+		{ "name": "Auto", "time": [1, 47] },
+
+		{ "name": "High Concept", "time": [1, 59] },
+		{ "name": "Arcane Control", "short": "Debuffs", "time": [2, 6] },
+		{ "name": "Arcane Channel", "short": "Towers", "time": [2, 18] },
+		{ "name": "Arcane Control", "short": "Debuffs", "time": [2, 25] },
+		{ "name": "Arcane Channel", "short": "Towers", "time": [2, 37] },
+
+		{ "name": "Aioniopyr", "time": [2, 51] },
+		{ "name": "Auto", "time": [2, 54] },
+		{ "name": "Auto", "time": [2, 57] },
+		{ "name": "Auto", "time": [3, 0] },
+		{ "name": "Limitless Desolation", "short": "LD", "time": [3, 6], "duration": 21 },
+		{ "name": "Aioniopyr", "time": [3, 34] },
+		{ "name": "Auto", "time": [3, 37] },
+		{ "name": "Auto", "time": [3, 40] },
+		{ "name": "Tyrant's Unholy Darkness", "short": "Split TB", "time": [3, 48] },
+		{ "name": "Auto", "time": [3, 52] },
+		{ "name": "Auto", "time": [3, 55] },
+
+
+
+		{ "name": "Aionagonia", "time": [8, 4] },
+		{ "name": "Ego Death", "time": [8, 27] }
+	]
+}]

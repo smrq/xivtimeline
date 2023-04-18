@@ -1,7 +1,19 @@
-/* general functionality and styling */
 .vis-drag-left,
 .vis-drag-right {
   pointer-events: none;
+}
+
+.vis-custom-time {
+  background-color: #e5bec8;
+  pointer-events: none;
+}
+
+.vis-custom-time > .vis-custom-time-marker {
+  white-space: nowrap;
+  padding: 2px 5px;
+}
+
+.vis-item.vis-selected {
 }
 
 .vis-item .vis-delete:after {
@@ -13,87 +25,80 @@
 }
 
 .vis-item .vis-delete:hover:after {
-  color: #9e9e9e;
+  color: red;
 }
 
-/* marker styling */
-.vis-custom-time {
-  background-color: #e5bec8;
-  pointer-events: none;
+/* Cooldown styles */
+.vis-item {
+  --fg-color: #d5e4f6;
+  --bg-color: #f1f8ff;
+  --border-color: #bed4f0;
 }
 
-.vis-custom-time > .vis-custom-time-marker {
-  white-space: nowrap;
-  padding: 2px 5px;
+.vis-item.drk-reprisal,
+.vis-item.war-reprisal {
+  --fg-color: #f2d5f6;
+  --bg-color: #fff1ff;
+  --border-color: #ecbef0;
 }
 
-/* item styling */
-.vis-item.vis-selected {
-  border-color: inherit;
+.vis-item.drk-rampart,
+.vis-item.war-rampart {
+  --fg-color: #d5e4f6;
+  --bg-color: #f1f8ff;
+  --border-color: #bed4f0;
 }
 
-.vis-item .vis-drag-center {
-  cursor: default;
+.vis-item.drk-dark-missionary {
+  --fg-color: #f6e1d5;
+  --bg-color: #fff5f1;
+  --border-color: #f0ccbe;
 }
 
-/********************** ABILITIES **********************/
-
-/* shared */
-.vis-item.reprisalDRK,
-.vis-item.reprisalWAR {
-  background: linear-gradient(to right, #f2d5f6 0 16.66%, #fff1ff 16.66% 100%);
-  border-color: #ecbef0;
+.vis-item.drk-shadow-wall {
+  --fg-color: #ded5f6;
+  --bg-color: #f4f1ff;
+  --border-color: #c6bef0;
 }
 
-.vis-item.rampartDRK,
-.vis-item.rampartWAR {
-  background: linear-gradient(to right, #d5e4f6 0 22.22%, #f1f8ff 22.22% 100%);
-  border-color: #bed4f0;
+.vis-item.drk-dark-mind {
+  --fg-color: #eee5ca;
+  --bg-color: #f8f4e5;
+  --border-color: #e2d5aa;
 }
 
-/* drk */
-.vis-item.darkMissionary {
-  background: linear-gradient(to right, #f6e1d5 0 16.66%, #fff5f1 16.66% 100%);
-  border-color: #f0ccbe;
+.vis-item.drk-living-dead {
+  --fg-color: #f6d5d5;
+  --bg-color: #fff1f1;
+  --border-color: #f0bebe;
 }
 
-.vis-item.shadowWall {
-  background: linear-gradient(to right, #ded5f6 0 12.5%, #f4f1ff 12.5% 100%);
-  border-color: #c6bef0;
+.vis-item.war-shake-it-off {
+  --fg-color: #ceecea;
+  --bg-color: #ecfcf9;
+  --border-color: #b0ddd7;
 }
 
-.vis-item.darkMind {
-  background: linear-gradient(to right, #eee5ca 0 16.66%, #f8f4e5 16.66% 100%);
-  border-color: #e2d5aa;
+.vis-item.war-vengeance {
+  --fg-color: #e7d5f6;
+  --bg-color: #f8f1ff;
+  --border-color: #d5bef0;
 }
 
-.vis-item.livingDead {
-  background: linear-gradient(to right, #f6d5d5 0 6.66%, #fff1f1 6.66% 100%);
-  border-color: #f0bebe;
+.vis-item.war-thrill-of-battle {
+  --fg-color: #cff0d3;
+  --bg-color: #ecfced;
+  --border-color: #b5e4b9;
 }
 
-/* war */
-.vis-item.shakeItOff {
-  background: linear-gradient(to right, #ceecea 0 16.66%, #ecfcf9 16.66% 100%);
-  border-color: #b0ddd7;
+.vis-item.war-equilibrium {
+  --fg-color: #e5eecb;
+  --bg-color: #f7fcec;
+  --border-color: #d9e5b6;
 }
 
-.vis-item.vengeance {
-  background: linear-gradient(to right, #e7d5f6 0 12.5%, #f8f1ff 12.5% 100%);
-  border-color: #d5bef0;
-}
-
-.vis-item.thrillOfBattle {
-  background: linear-gradient(to right, #cff0d3 0 11.11%, #ecfced 11.11% 100%);
-  border-color: #b5e4b9;
-}
-
-.vis-item.equilibrium {
-  background: linear-gradient(to right, #e5eecb 0 25%, #f7fcec 25% 100%);
-  border-color: #d9e5b6;
-}
-
-.vis-item.holmgang {
-  background: linear-gradient(to right, #f6d5d5 0 4.16%, #fff1f1 4.16% 100%);
-  border-color: #f0bebe;
+.vis-item.war-holmgang {
+  --fg-color: #f6d5d5;
+  --bg-color: #fff1f1;
+  --border-color: #f0bebe;
 }

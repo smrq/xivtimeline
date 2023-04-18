@@ -1,14 +1,19 @@
-import PartyTimeline from './timeline/PartyTimeline';
+import { PartyTimeline } from './timeline/PartyTimeline';
+import { getFight, getJob } from './data';
 import './App.css';
 
-const App = () => {
+const fight = getFight('p8s2');
+const jobs = ['WHM', 'SGE', 'WAR', 'GNB'].map(getJob);
+
+export default function App() {
   return (
     <>
       <h1>FFXIV Mitigation Planner</h1>
-      <h3>Asphodelos: The Third Circle | P3S</h3>
-      <PartyTimeline />
+      <h3>{fight.name}</h3>
+      <PartyTimeline
+        fight={fight}
+        jobs={jobs}
+      />
     </>
   );
 };
-
-export default App;

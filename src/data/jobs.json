@@ -1,0 +1,43 @@
+[{
+	"id": "WHM",
+	"name": "White Mage",
+	"cooldowns": [
+		{ "name": "Asylum", "recast": 90, "duration": 24 },
+		{ "name": "Temperance", "recast": 120, "duration": 20 },
+		{ "name": "Liturgy of the Bell", "recast": 180, "duration": 20 },
+		{ "name": "Plenary Indulgence", "recast": 60, "duration": 10 },
+		{ "name": "Aquaveil", "recast": 60, "duration": 8 },
+		{ "name": "Benediction", "recast": 180, "duration": 0 }
+	]
+}, {
+	"id": "SGE",
+	"name": "Sage",
+	"cooldowns": []
+}, {
+	"id": "DRK",
+	"name": "Dark Knight",
+	"cooldowns": [
+		{ "name": "Living Dead", "recast": 300, "duration": 10 },
+		{ "name": "Shadow Wall", "recast": 120, "duration": 15 },
+		{ "name": "Dark Missionary", "recast": 90, "duration": 15 }, 
+		{ "name": "Dark Mind", "recast": 60, "duration": 10 },
+		{ "name": "Rampart", "recast": 90, "duration": 20 },
+		{ "name": "Reprisal", "recast": 60, "duration": 10 }
+	]
+}, {
+	"id": "WAR",
+	"name": "Warrior",
+	"cooldowns": [
+		{ "name": "Thrill of Battle", "recast": 90, "duration": 10 }, 
+		{ "name": "Vengeance", "recast": 120, "duration": 15 },
+		{ "name": "Holmgang", "recast": 240, "duration": 10 },
+		{ "name": "Shake It Off", "recast": 90, "duration": 30 },
+		{ "name": "Equilibrium", "recast": 60, "duration": 0 },
+		{ "name": "Rampart", "recast": 90, "duration": 20 },
+		{ "name": "Reprisal", "recast": 60, "duration": 10 }
+	]
+}, {
+	"id": "GNB",
+	"name": "Gunbreaker",
+	"cooldowns": []
+}]
