@@ -3,8 +3,16 @@
   pointer-events: none;
 }
 
+.vis-time-axis .vis-grid {
+  display: none;
+}
+
 .vis-custom-time {
-  background-color: #e5bec8;
+  background-color: gold;
+  cursor: auto;
+}
+
+.vis-custom-time > :first-child {
   pointer-events: none;
 }
 
@@ -13,7 +21,33 @@
   padding: 2px 5px;
 }
 
-.vis-item.vis-selected {
+.vis-custom-time[class*='auto-'] {
+  background-color: lightsteelblue;
+}
+
+.vis-custom-time[class*='dot'] {
+  background-color: orangered;
+}
+
+.vis-custom-time[class*='tankbuster-'] {
+  background-color: steelblue;
+}
+
+.vis-custom-time[class*='raidwide-'] {
+  background-color: lightsalmon;
+}
+
+.vis-custom-time[class*='enrage-'] {
+  background-color: black;
+}
+
+.vis-item {
+  --fg-color: #d5e4f6;
+  --bg-color: #f1f8ff;
+  --border-color: #bed4f0;
+  height: 27px;
+  background: linear-gradient(to right, rgba(var(--color), 0.5) 0 var(--ratio, 0), rgba(var(--color), 0.1) var(--ratio) 100%);
+  border-color: rgba(var(--color), 0.4);
 }
 
 .vis-item .vis-delete:after {
@@ -28,77 +62,18 @@
   color: red;
 }
 
-/* Cooldown styles */
-.vis-item {
-  --fg-color: #d5e4f6;
-  --bg-color: #f1f8ff;
-  --border-color: #bed4f0;
+.vis-item .vis-item-content {
+  padding: 0;
 }
 
-.vis-item.drk-reprisal,
-.vis-item.war-reprisal {
-  --fg-color: #f2d5f6;
-  --bg-color: #fff1ff;
-  --border-color: #ecbef0;
+.vis-label img,
+.vis-item .vis-item-content img {
+  height: 25px;
 }
 
-.vis-item.drk-rampart,
-.vis-item.war-rampart {
-  --fg-color: #d5e4f6;
-  --bg-color: #f1f8ff;
-  --border-color: #bed4f0;
-}
-
-.vis-item.drk-dark-missionary {
-  --fg-color: #f6e1d5;
-  --bg-color: #fff5f1;
-  --border-color: #f0ccbe;
-}
-
-.vis-item.drk-shadow-wall {
-  --fg-color: #ded5f6;
-  --bg-color: #f4f1ff;
-  --border-color: #c6bef0;
-}
-
-.vis-item.drk-dark-mind {
-  --fg-color: #eee5ca;
-  --bg-color: #f8f4e5;
-  --border-color: #e2d5aa;
-}
-
-.vis-item.drk-living-dead {
-  --fg-color: #f6d5d5;
-  --bg-color: #fff1f1;
-  --border-color: #f0bebe;
-}
-
-.vis-item.war-shake-it-off {
-  --fg-color: #ceecea;
-  --bg-color: #ecfcf9;
-  --border-color: #b0ddd7;
-}
-
-.vis-item.war-vengeance {
-  --fg-color: #e7d5f6;
-  --bg-color: #f8f1ff;
-  --border-color: #d5bef0;
-}
-
-.vis-item.war-thrill-of-battle {
-  --fg-color: #cff0d3;
-  --bg-color: #ecfced;
-  --border-color: #b5e4b9;
-}
-
-.vis-item.war-equilibrium {
-  --fg-color: #e5eecb;
-  --bg-color: #f7fcec;
-  --border-color: #d9e5b6;
-}
-
-.vis-item.war-holmgang {
-  --fg-color: #f6d5d5;
-  --bg-color: #fff1f1;
-  --border-color: #f0bebe;
+.vis-labelset .vis-label .vis-inner {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }

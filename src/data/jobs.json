@@ -1,43 +1,242 @@
-[{
-	"id": "WHM",
-	"name": "White Mage",
-	"cooldowns": [
-		{ "name": "Asylum", "recast": 90, "duration": 24 },
-		{ "name": "Temperance", "recast": 120, "duration": 20 },
-		{ "name": "Liturgy of the Bell", "recast": 180, "duration": 20 },
-		{ "name": "Plenary Indulgence", "recast": 60, "duration": 10 },
-		{ "name": "Aquaveil", "recast": 60, "duration": 8 },
-		{ "name": "Benediction", "recast": 180, "duration": 0 }
-	]
-}, {
-	"id": "SGE",
-	"name": "Sage",
-	"cooldowns": []
-}, {
-	"id": "DRK",
-	"name": "Dark Knight",
-	"cooldowns": [
-		{ "name": "Living Dead", "recast": 300, "duration": 10 },
-		{ "name": "Shadow Wall", "recast": 120, "duration": 15 },
-		{ "name": "Dark Missionary", "recast": 90, "duration": 15 }, 
-		{ "name": "Dark Mind", "recast": 60, "duration": 10 },
-		{ "name": "Rampart", "recast": 90, "duration": 20 },
-		{ "name": "Reprisal", "recast": 60, "duration": 10 }
-	]
-}, {
-	"id": "WAR",
-	"name": "Warrior",
-	"cooldowns": [
-		{ "name": "Thrill of Battle", "recast": 90, "duration": 10 }, 
-		{ "name": "Vengeance", "recast": 120, "duration": 15 },
-		{ "name": "Holmgang", "recast": 240, "duration": 10 },
-		{ "name": "Shake It Off", "recast": 90, "duration": 30 },
-		{ "name": "Equilibrium", "recast": 60, "duration": 0 },
-		{ "name": "Rampart", "recast": 90, "duration": 20 },
-		{ "name": "Reprisal", "recast": 60, "duration": 10 }
-	]
-}, {
-	"id": "GNB",
-	"name": "Gunbreaker",
-	"cooldowns": []
-}]
+[
+	{
+		"id": "WHM",
+		"name": "White Mage",
+		"cooldowns": [
+			{
+				"name": "Asylum",
+				"recast": 90,
+				"duration": 24,
+				"icon": "icons/16_WHM/asylum.png",
+				"color": "130,131,67"
+			},
+			{
+				"name": "Temperance",
+				"recast": 120,
+				"duration": 20,
+				"icon": "icons/16_WHM/temperance.png",
+				"color": "60,74,95"
+			},
+			{
+				"name": "Liturgy of the Bell",
+				"recast": 180,
+				"duration": 20,
+				"icon": "icons/16_WHM/liturgy_of_the_bell.png",
+				"color": "86,139,143"
+			},
+			{
+				"name": "Plenary Indulgence",
+				"recast": 60,
+				"duration": 10,
+				"icon": "icons/16_WHM/plenary_indulgence.png",
+				"color": "119,172,177"
+			},
+			{
+				"name": "Aquaveil",
+				"recast": 60,
+				"duration": 8,
+				"icon": "icons/16_WHM/aquaveil.png",
+				"color": "85,120,191"
+			},
+			{
+				"name": "Benediction",
+				"recast": 180,
+				"duration": 0,
+				"icon": "icons/16_WHM/benediction.png",
+				"color": "184,203,200"
+			}
+		]
+	},
+	{
+		"id": "SGE",
+		"name": "Sage",
+		"cooldowns": [
+			{
+				"name": "Physis",
+				"recast": 60,
+				"duration": 15,
+				"icon": "icons/19_SGE/physis.png",
+				"color": "64,93,124"
+			},
+			{
+				"name": "Krasis",
+				"recast": 60,
+				"duration": 10,
+				"icon": "icons/19_SGE/krasis.png",
+				"color": "64,111,124"
+			},
+			{
+				"name": "Haima",
+				"recast": 120,
+				"duration": 15,
+				"icon": "icons/19_SGE/haima.png",
+				"color": "118,99,170"
+			},
+			{
+				"name": "Holos",
+				"recast": 120,
+				"duration": 20,
+				"icon": "icons/19_SGE/holos.png",
+				"color": "34,74,79"
+			},
+			{
+				"name": "Panhaima",
+				"recast": 120,
+				"duration": 15,
+				"icon": "icons/19_SGE/panhaima.png",
+				"color": "106,97,173"
+			},
+			{
+				"name": "Pneuma",
+				"recast": 120,
+				"duration": 0,
+				"icon": "icons/19_SGE/pneuma.png",
+				"color": "93,118,188"
+			}
+		]
+	},
+	{
+		"id": "DRK",
+		"name": "Dark Knight",
+		"cooldowns": [
+			{
+				"name": "Living Dead",
+				"recast": 300,
+				"duration": 10,
+				"icon": "icons/03_DRK/living_dead.png",
+				"color": "135,71,65"
+			},
+			{
+				"name": "Shadow Wall",
+				"recast": 120,
+				"duration": 15,
+				"icon": "icons/03_DRK/shadow_wall.png",
+				"color": "76,45,90"
+			},
+			{
+				"name": "Dark Missionary",
+				"recast": 90,
+				"duration": 15,
+				"icon": "icons/03_DRK/dark_missionary.png",
+				"color": "144,73,53"
+			},
+			{
+				"name": "Dark Mind",
+				"recast": 60,
+				"duration": 10,
+				"icon": "icons/03_DRK/dark_mind.png",
+				"color": "133,98,85"
+			},
+			{
+				"name": "Rampart",
+				"recast": 90,
+				"duration": 20,
+				"icon": "icons/03_DRK/TankRollAction/rampart.png",
+				"color": "58,59,76"
+			},
+			{
+				"name": "Reprisal",
+				"recast": 60,
+				"duration": 10,
+				"icon": "icons/03_DRK/TankRollAction/reprisal.png",
+				"color": "198,90,201"
+			}
+		]
+	},
+	{
+		"id": "WAR",
+		"name": "Warrior",
+		"cooldowns": [
+			{
+				"name": "Thrill of Battle",
+				"recast": 90,
+				"duration": 10,
+				"icon": "icons/02_WAR/thrill_of_battle.png",
+				"color": "85,123,51"
+			},
+			{
+				"name": "Vengeance",
+				"recast": 120,
+				"duration": 15,
+				"icon": "icons/02_WAR/vengeance.png",
+				"color": "178,133,164"
+			},
+			{
+				"name": "Holmgang",
+				"recast": 240,
+				"duration": 10,
+				"icon": "icons/02_WAR/holmgang.png",
+				"color": "165,108,90"
+			},
+			{
+				"name": "Shake It Off",
+				"recast": 90,
+				"duration": 30,
+				"icon": "icons/02_WAR/shake_it_off.png",
+				"color": "76,120,107"
+			},
+			{
+				"name": "Rampart",
+				"recast": 90,
+				"duration": 20,
+				"icon": "icons/02_WAR/TankRollAction/rampart.png",
+				"color": "58,59,76"
+			},
+			{
+				"name": "Reprisal",
+				"recast": 60,
+				"duration": 10,
+				"icon": "icons/02_WAR/TankRollAction/reprisal.png",
+				"color": "198,90,201"
+			}
+		]
+	},
+	{
+		"id": "GNB",
+		"name": "Gunbreaker",
+		"cooldowns": [
+			{
+				"name": "Camouflage",
+				"recast": 90,
+				"duration": 20,
+				"icon": "icons/04_GNB/camouflage.png",
+				"color": "84,98,141"
+			},
+			{
+				"name": "Nebula",
+				"recast": 120,
+				"duration": 15,
+				"icon": "icons/04_GNB/nebula.png",
+				"color": "167,134,134"
+			},
+			{
+				"name": "Superbolide",
+				"recast": 360,
+				"duration": 10,
+				"icon": "icons/04_GNB/superbolide.png",
+				"color": "64,90,134"
+			},
+			{
+				"name": "Heart of Light",
+				"recast": 90,
+				"duration": 15,
+				"icon": "icons/04_GNB/heart_of_light.png",
+				"color": "118,88,46"
+			},
+			{
+				"name": "Rampart",
+				"recast": 90,
+				"duration": 20,
+				"icon": "icons/04_GNB/TankRollAction/rampart.png",
+				"color": "58,59,76"
+			},
+			{
+				"name": "Reprisal",
+				"recast": 60,
+				"duration": 10,
+				"icon": "icons/04_GNB/TankRollAction/reprisal.png",
+				"color": "198,90,201"
+			}
+		]
+	}
+]

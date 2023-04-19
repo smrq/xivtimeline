@@ -1,14 +1,10 @@
-/* body */
-#visualization {
-  width: 100%;
-  margin-top: 30px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
 
 body {
-  font-family: 'Yu Gothic';
-  margin: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0 20px;
 }
 
-h3 {
+h1 + h3 {
   margin-top: -20px;
 }

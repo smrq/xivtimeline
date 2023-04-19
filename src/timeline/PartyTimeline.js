@@ -1,29 +1,73 @@
 import React, { useRef, useEffect, useMemo } from 'react';
 import { DataSet, Timeline } from 'vis-timeline/standalone';
+
+import { isJob, getJob, isCooldown, getCooldown } from '../data';
+
 import './PartyTimeline.css';
 
-import { getCooldown } from '../data';
+function serialize(items) {
+	const data = items.map(item => ({
+		id: item.id,
+		group: item.group,
+		start: +item.start,
+	}));
+	return JSON.stringify(data);
+}
+
+function deserialize(json) {
+	const data = JSON.parse(json);
+	const items = data.map(item => ({
+		id: item.id,
+		group: item.group,
+		start: new Date(item.start),
+	}));
+
+	for (let item of items) {
+		initTimelineItem(item);
+	}
+
+	return items;
+}
+
+function save(items) {
+	const data = items.get();
+	const json = serialize(data);
+	localStorage.setItem('data', json);
+}
+
+function load() {
+	const items = new DataSet();
+
+	const json = localStorage.getItem('data');
+	if (json) {
+		const data = deserialize(json);
+		items.add(data);
+	}
+
+	return items;
+}
+
+function initTimelineItem(item) {
+	const cooldown = getCooldown(item.group);
+
+	item.className = item.group;
+	item.end = item.start.getTime() + cooldown.recast;
+	item.style = `--ratio: ${100 * cooldown.duration / cooldown.recast}%; --color: ${cooldown.color};`;
+
+	return item;
+}
 
 function createJobTimelineGroup(job) {
+	const jobItem = {
+		treeLevel: 0,
+		id: job.id,
+		nestedGroups: job.cooldowns.map(cooldown => cooldown.id),  
+	};
 	const cooldownItems = job.cooldowns.map(cooldown => ({
 		id: cooldown.id,
 		treeLevel: 1,
-		content: cooldown.name
 	}));
-
-	const jobItem = {
-		id: job.id,
-		treeLevel: 0,
-		content: job.name,
-		nestedGroups: cooldownItems.map(item => item.id),  
-	};
-
 	return [jobItem, ...cooldownItems];
-}
-
-function cooldownStyle(cooldown) {
-	const ratio = cooldown.duration / cooldown.recast;
-	return `background: linear-gradient(to right, var(--fg-color) 0 ${ratio*100}%, var(--bg-color) ${ratio*100}% 100%); border-color: var(--border-color);`;
 }
 
 function getTimelineOptions(fight, items) {
@@ -53,32 +97,42 @@ function getTimelineOptions(fight, items) {
 			overrideItems: true,
 		},
 
-		onAdd: function (item, callback) {
+		groupTemplate: function (item) {
+			if (item) {
+				if (isJob(item.id)) {
+					const job = getJob(item.id);
+					return job.name;
+				} else if (isCooldown(item.id)) {
+					const cooldown = getCooldown(item.id);
+					return `<img src="/${cooldown.icon}"><span>${cooldown.name}</span>`;
+				}
+			}
+			return '';
+		},
+
+		template: function (item) {
 			const cooldown = getCooldown(item.group);
+			return `<img src="/${cooldown.icon}">`;
+		},
 
-			item.className = item.group;
-			item.content = '';
-			item.end = item.start.getTime() + cooldown.recast;
-			item.style = cooldownStyle(cooldown);
-
-			callback(item);
-
-			const data = items.get();
-			localStorage.setItem('data', JSON.stringify(data));
+		onAdd: function (item, callback) {
+			if (isCooldown(item.group)) {
+				initTimelineItem(item);
+				callback(item);
+				save(items);
+			}
 		},
 
 		onMoving: function (item, callback) {
 			const overlapping = items.get({
 				filter: function (testItem) {
-					if (testItem.id === item.id) {
-						return false;
-					}
 					return (
+						testItem.id !== item.id &&
 						item.start <= testItem.end &&
 						item.end >= testItem.start &&
 						item.group === testItem.group
 					);
-				},
+				}
 			});
 
 			if (overlapping.length === 0 && item.start >= 0) {
@@ -88,16 +142,12 @@ function getTimelineOptions(fight, items) {
 
 		onMove: function (item, callback) {
 			callback(item);
-
-			const data = items.get();
-			localStorage.setItem('data', JSON.stringify(data));
+			save(items);
 		},
 
 		onRemove: function (item, callback) {
 			callback(item);
-
-			const data = items.get();
-			localStorage.setItem('data', JSON.stringify(data));
+			save(items);
 		},
 	};
 }
@@ -111,11 +161,7 @@ export function PartyTimeline({ fight, jobs }) {
 		return groups;
 	}, [jobs]);
 
-	const items = new DataSet();
-	if (localStorage.getItem('data')) {
-		let data = JSON.parse(localStorage.getItem('data'));
-		items.add(data);
-	}
+	const items = useMemo(() => load(), []);
 
 	const container = useRef(null);
 
@@ -125,8 +171,9 @@ export function PartyTimeline({ fight, jobs }) {
 			const timeline = new Timeline(container.current, items, groups, options);
 
 			for (const marker of fight.timeline) {
-				timeline.addCustomTime(marker.time, marker.id);
-				timeline.setCustomTimeMarker(marker.short || marker.name, marker.id);
+				timeline.addCustomTime(marker.start, marker.id);
+				timeline.setCustomTimeMarker(marker.name, marker.id);
+				timeline.setCustomTimeTitle(marker.title, marker.id);
 			}
 
 			return () => {
@@ -135,6 +182,5 @@ export function PartyTimeline({ fight, jobs }) {
 		}
 	}, [container, items, groups, fight]);
 
-	// return timeline
 	return <div ref={container} />;
 };
